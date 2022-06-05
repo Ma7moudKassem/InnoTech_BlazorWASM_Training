@@ -1,0 +1,39 @@
+﻿@page "/students"
+
+<h1>Students</h1>
+
+<EditForm Model="student">
+<label>Name</label>
+<InputText @bind-Value="@student.Name"></InputText>
+<label>Mobile</label>
+<InputText @bind-Value="@student.Mobile"></InputText>
+<label>GPA</label>
+<InputNumber @bind-Value="@student.GPA"></InputNumber>
+<label>Grade</label>
+<InputText @bind-Value="@student.Grade"></InputText>
+</EditForm>
+<button @onclick="SaveStudentDataToDB" class="btn btn-primary" style="margin-top:20px;margin-bottom:20px">Save Student</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>GPA</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    @foreach( var student in students??new())
+    {
+        <tbody>
+        <tr>
+            <td>@student.Name</td>
+            <td>@student.Mobile</td>
+            <td>@student.GPA</td>
+            <td>@student.Grade</td>
+        </tr>
+    </tbody>
+    
+    }
+</table>
+
+
