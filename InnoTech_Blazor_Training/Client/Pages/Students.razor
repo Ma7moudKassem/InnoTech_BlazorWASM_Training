@@ -1,0 +1,32 @@
+﻿@page "/students"
+<h1>Students</h1>
+<div class="input-group">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <button type="button" class="btn btn-outline-primary">search</button>
+</div>
+
+
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>GPA</th>
+            <th>Grade</th>
+            <th>Birth Date</th>
+        </tr>
+    </thead>
+    @foreach( var student in students??new())
+    {
+     <tbody>
+        <tr>
+            <td>@student.Name</td>
+            <td>@student.Mobile</td>
+            <td>@student.GPA</td>
+            <td>@student.Grade</td>
+            <td>@student.BirthDay</td>
+        </tr>
+     </tbody>
+    
+    }
+</table>

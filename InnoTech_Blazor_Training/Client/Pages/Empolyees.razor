@@ -1,0 +1,32 @@
+﻿@page "/empolyees"
+<h1>Empolyees</h1>
+
+<div class="input-group">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <button type="button" class="btn btn-outline-primary">search</button>
+</div>
+
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mobile</th>
+            <th>Telephone</th>
+            <th>Birth Date</th>
+        </tr>
+    </thead>
+    @foreach( var empolyee in empolyees??new())
+    {
+     <tbody>
+        <tr>
+            <td>@empolyee.Name</td>
+            <td>@empolyee.Age</td>
+            <td>@empolyee.Mobile</td>
+            <td>@empolyee.Telephone</td>
+            <td>@empolyee.BirthDay</td>
+        </tr>
+     </tbody>
+    
+    }
+</table>

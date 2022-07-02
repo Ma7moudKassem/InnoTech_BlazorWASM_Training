@@ -1,0 +1,32 @@
+﻿<h1>Add Empolyee</h1>
+
+<EditForm Model="employee">
+<label>Name</label>
+<InputText @bind-Value="@employee.Name" class="form-control "></InputText>
+<label>Mobile</label>
+<InputText @bind-Value="@employee.Mobile" class="form-control "></InputText>
+<label>Age</label>
+<InputNumber @bind-Value="@employee.Age" class="form-control "></InputNumber>
+<label>Telephone</label>
+<InputText @bind-Value="@employee.Telephone" class="form-control "></InputText>
+<label>Birth Date</label>
+<InputDate @bind-Value="@employee.BirthDay" class="form-control "></InputDate>
+</EditForm>
+<button @onclick="SaveEmpolyeeToDb" class="btn btn-primary" style="margin-top:20px;margin-bottom:20px">Save Empolyee</button>
+
+
+<h1>Add Student</h1>
+
+<EditForm Model="student">
+<label>Name</label>
+<InputText @bind-Value="@student.Name" class="form-control "></InputText>
+<label>Mobile</label>
+<InputText @bind-Value="@student.Mobile" class="form-control "></InputText>
+<label>GPA</label>
+<InputNumber @bind-Value="@student.GPA" class="form-control "></InputNumber>
+<label>Grade</label>
+<InputText @bind-Value="@student.Grade" class="form-control "></InputText>
+<label>Birth Date</label>
+<InputDate @bind-Value="@student.BirthDay" class="form-control "></InputDate>
+</EditForm>
+<button @onclick="SaveStudentToDb" class="btn btn-primary" style="margin-top:20px;margin-bottom:20px">Save Student</button>
