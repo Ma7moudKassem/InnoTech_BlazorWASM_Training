@@ -1,7 +1,5 @@
 ﻿@page "/students"
-
 <h1>Students</h1>
-
 <EditForm Model="student">
 <label>Name</label>
 <InputText @bind-Value="@student.Name"></InputText>
@@ -11,6 +9,8 @@
 <InputNumber @bind-Value="@student.GPA"></InputNumber>
 <label>Grade</label>
 <InputText @bind-Value="@student.Grade"></InputText>
+<label>Birth Date</label>
+<InputDate @bind-Value="@student.BirthDay"></InputDate>
 </EditForm>
 <button @onclick="SaveStudentDataToDB" class="btn btn-primary" style="margin-top:20px;margin-bottom:20px">Save Student</button>
 <table class="table">
@@ -20,18 +20,20 @@
             <th>Mobile</th>
             <th>GPA</th>
             <th>Grade</th>
+            <th>Birth Date</th>
         </tr>
     </thead>
     @foreach( var student in students??new())
     {
-        <tbody>
+     <tbody>
         <tr>
             <td>@student.Name</td>
             <td>@student.Mobile</td>
             <td>@student.GPA</td>
             <td>@student.Grade</td>
+            <td>@student.BirthDay</td>
         </tr>
-    </tbody>
+     </tbody>
     
     }
 </table>
