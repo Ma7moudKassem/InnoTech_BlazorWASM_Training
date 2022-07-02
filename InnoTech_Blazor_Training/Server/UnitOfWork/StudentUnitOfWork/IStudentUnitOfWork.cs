@@ -1,6 +1,6 @@
-﻿namespace InnoTech_Blazor_Training.Server.UnitOfWork.StudentUnitOfWork
+﻿namespace InnoTech_Blazor_Training.Server.UnitOfWork.EmpolyeeUnitOfWork
 {
-    public interface IStudentUnitOfWork : IBaseUnitOfWork<Student>
+    public interface IStudentUnitOfWork : IBaseSettingsUnitOfWork<Student>
     {
     }
 }

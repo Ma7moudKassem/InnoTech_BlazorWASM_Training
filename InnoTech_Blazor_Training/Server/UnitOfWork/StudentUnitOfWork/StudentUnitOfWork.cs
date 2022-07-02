@@ -1,6 +1,6 @@
-﻿namespace InnoTech_Blazor_Training.Server.UnitOfWork.StudentUnitOfWork
+﻿namespace InnoTech_Blazor_Training.Server.UnitOfWork.EmpolyeeUnitOfWork
 {
-    public class StudentUnitOfWork : BaseUnitOfWork<Student>, IStudentUnitOfWork
+    public class StudentUnitOfWork : BaseSettingeUnitOfWork<Student>, IStudentUnitOfWork
     {
         public StudentUnitOfWork(IStudentRepository repository) : base(repository)
         {

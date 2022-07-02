@@ -10,11 +10,6 @@
             _context = context;
             dbSet = _context.Set<TEntity>();
         }
-        public virtual async Task<IEnumerable<TEntity>> Get() => await dbSet.ToListAsync();
-        public virtual async Task<TEntity> Get(Guid id) => await 
-                                               dbSet.FirstOrDefaultAsync(e => e.Id == id)?? 
-                                               Activator.CreateInstance<TEntity>();
-
         public virtual async Task Add(TEntity entity)
         {
             ThrowExceptionIfParametarIsNotSupplied(entity);
@@ -27,6 +22,11 @@
             await dbSet.AddRangeAsync(entities);
             await SaveChangesAsync();
         }
+
+        public virtual async Task<IEnumerable<TEntity>> Get() => await dbSet.ToListAsync();
+        public virtual async Task<TEntity> Get(Guid id) => await
+                                               dbSet.FirstOrDefaultAsync(e => e.Id == id) ??
+                                               Activator.CreateInstance<TEntity>();
 
         public virtual async Task Update(List<TEntity> entities)
         {
@@ -106,5 +106,6 @@
         public virtual async Task<IDbContextTransaction> GetTransaction() => await _context.Database.BeginTransactionAsync();
         protected async Task SaveChangesAsync() => await _context.SaveChangesAsync();
         public void Dispose() => _context.Dispose();
+
     }
 }

@@ -13,9 +13,6 @@
         [HttpGet("{id}")]
         public virtual async Task<TEntity> Get([FromRoute]Guid id) => await _unitOfWork.Read(id);
 
-        [HttpGet("search/{id}")]
-        public virtual async Task<TEntity> Search([FromRoute] Guid id) => await _unitOfWork.Read(id);
-
         [HttpPost]
         public virtual async Task Post(TEntity entity) => await _unitOfWork.Create(entity);
 

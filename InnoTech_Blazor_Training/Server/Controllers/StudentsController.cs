@@ -2,7 +2,7 @@
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentController : BaseController<Student>
+    public class StudentController : BaseSettingsController<Student>
     {
         public StudentController(IStudentUnitOfWork unitOfWork) : base(unitOfWork)
         {

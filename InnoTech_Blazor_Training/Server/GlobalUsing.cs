@@ -5,7 +5,6 @@ global using Microsoft.AspNetCore.ResponseCompression;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore.Storage;
 global using InnoTech_Blazor_Training.Server.BaseUnitOfWork;
-global using InnoTech_Blazor_Training.Server.UnitOfWork.StudentUnitOfWork;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using InnoTech_Blazor_Training.Server.EntityConfiguration;
 global using InnoTech_Blazor_Training.Server.UnitOfWork.EmpolyeeUnitOfWork;
