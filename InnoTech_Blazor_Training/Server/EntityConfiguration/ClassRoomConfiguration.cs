@@ -1,6 +1,4 @@
-﻿
-
-namespace InnoTech_Blazor_Training.Server.EntityConfiguration
+﻿namespace InnoTech_Blazor_Training.Server.EntityConfiguration
 {
     public class ClassRoomConfiguration : BaseSettingsEntityConfiguration<ClassRoom>, 
                                           IEntityTypeConfiguration<ClassRoom>
