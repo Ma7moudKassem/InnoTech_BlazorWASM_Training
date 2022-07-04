@@ -6,6 +6,5 @@
         public string? Mobile { get; set; }
         public string? Grade { get; set; }
         public DateTime BirthDay { get; set; }
-
     }
 }

@@ -7,8 +7,12 @@
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration<Empolyee>(new EmpolyeeConfiguration())
-                        .ApplyConfiguration<Student>(new StudentConfiguration());
+            modelBuilder.ApplyConfiguration(new EmpolyeeConfiguration())
+                        .ApplyConfiguration(new StudentConfiguration())
+                        .ApplyConfiguration(new ClassRoomConfiguration())
+                        .ApplyConfiguration(new ClassRoomStudentConfiguration())
+                        .ApplyConfiguration(new SubjectConfiguration())
+                        .ApplyConfiguration(new TeacherConfiguration());
         }
     }
 }

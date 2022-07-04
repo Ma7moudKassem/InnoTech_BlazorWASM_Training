@@ -3,7 +3,6 @@
     public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {
         protected DbSet<TEntity> dbSet;
-
         private readonly DataContext _context;
         public BaseRepository(DataContext context)
         {
