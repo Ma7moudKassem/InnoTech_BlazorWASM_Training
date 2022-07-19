@@ -1,0 +1,50 @@
+﻿@if (Empolyee != null)
+{
+    <EditForm Model="Empolyee" id="@FormId" OnValidSubmit="OnValidSubmit">
+    <FluentValidationValidator />
+
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <div>
+            <InputText class="form-control" disabled="@IsDisabled" @bind-Value="@Empolyee.Name"></InputText>
+            <ValidationMessage For="@(()=>Empolyee.Name)"></ValidationMessage>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Mobile">Mobile</label>
+        <div>
+            <InputText class="form-control" disabled="@IsDisabled" @bind-Value="@Empolyee.Mobile"></InputText>
+            <ValidationMessage For="@(()=>Empolyee.Mobile)"></ValidationMessage>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Age">Age</label>
+        <div>
+            <InputNumber class="form-control" disabled="@IsDisabled" @bind-Value="@Empolyee.Age"></InputNumber>
+            <ValidationMessage For="@(()=>Empolyee.Age)"></ValidationMessage>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Telephone">Telephone</label>
+        <div>
+            <InputText class="form-control" disabled="@IsDisabled" @bind-Value="@Empolyee.Telephone"></InputText>
+            <ValidationMessage For="@(()=>Empolyee.Telephone)"></ValidationMessage>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="BirthDate">BirthDate</label>
+        <div>
+            <InputDate class="form-control" disabled="@IsDisabled" @bind-Value="@Empolyee.BirthDay"></InputDate>
+            <ValidationMessage For="@(()=>Empolyee.BirthDay)"></ValidationMessage>
+        </div>
+    </div>
+    </EditForm>
+@*    <button @onclick="SaveEmpolyeeToDb" class="btn btn-primary" style="margin-top:20px;margin-bottom:20px">Save Empolyee</button>
+*@}
+
+@code {
+    [Parameter]public Empolyee Empolyee { get; set; }
+    [Parameter]public string FormId { get; set; }
+    [Parameter]public EventCallback OnValidSubmit { get; set; }
+    [Parameter]public bool IsDisabled { get; set; }
+}

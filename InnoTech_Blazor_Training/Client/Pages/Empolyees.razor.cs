@@ -6,5 +6,6 @@
         List<Empolyee>? empolyees = new();
         public async Task<List<Empolyee>?> GetStudentDataFromDB() => await _client.GetFromJsonAsync<List<Empolyee>>("api/empolyee");
         protected override async Task OnInitializedAsync() => empolyees = await GetStudentDataFromDB();
+         
     }
 }

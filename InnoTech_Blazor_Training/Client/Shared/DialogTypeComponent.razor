@@ -1,0 +1,11 @@
+﻿<button type="button" class="btn btn-secondary" data-dismiss="model" @onclick="Close">Cancel</button>
+@if (ShowSaveButton)
+{
+    <button type="submit" form="@FormId" class="btn btn-primary" value="submit">Save</button>
+
+}
+@code {
+    [Parameter]public bool ShowSaveButton { get; set; }
+    [Parameter]public string? FormId { get; set; }
+    [Parameter]public EventCallback Close { get; set; }
+}

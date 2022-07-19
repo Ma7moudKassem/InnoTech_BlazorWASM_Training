@@ -10,3 +10,4 @@ global using InnoTech_Blazor_Training.Server.EntityConfiguration;
 global using InnoTech_Blazor_Training.Server.UnitOfWork.EmpolyeeUnitOfWork;
 global using Microsoft.EntityFrameworkCore.ValueGeneration;
 global using InnoTech_Blazor_Training.Shared.Entities;
+global using Microsoft.AspNetCore.SignalR;

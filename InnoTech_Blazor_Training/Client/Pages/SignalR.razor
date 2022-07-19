@@ -1,0 +1,33 @@
+﻿@page "/signalr"
+@using InnoTech_Blazor_Training.Shared.Entities
+<h3>SignalR</h3>
+
+<div class="form-group">
+<label>
+    Subject:
+        <input @bind="subject" size="50" class="form-control" />
+</label>
+</div>
+
+<div class="form-group">
+<label>
+    Message:
+        <input @bind="messageBody" size="50" class="form-control" />
+</label>
+</div>
+
+<button @onclick="Send" class="btn btn-primary" style="margin-top:20px;margin-bottom:20px" disabled="@(!IsConnected)">Send</button>
+<button @onclick="SendKassem" class="btn btn-primary" style="margin-top:20px;margin-bottom:20px" disabled="@(!IsConnected)">Send Kassem</button>
+
+<hr>
+<ul id="messagesList">
+    @foreach(NotificationMessage message in messages)
+    {
+        <li>
+            Subject:@message.Subject,
+            Body:@message.MessageBody,
+            From:@message.SenderId,
+            To:@message.ReceiverIds.FirstOrDefault(),
+        </li>
+    }
+</ul>
