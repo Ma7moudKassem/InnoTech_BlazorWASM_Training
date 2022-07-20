@@ -2,16 +2,7 @@
 {
     public class ChatHub : Hub
     {
-        //public async Task SendMessage(NotificationMessage message) => await Clients.All.SendAsync("ReceiveMessage", message);
         public async Task SendMessage(NotificationMessage message) => await Clients.Others.SendAsync("ReceiveMessage", message);
         public async Task BroadcastMessage(NotificationMessage message) => await Clients.All.SendAsync("ReceiveMessage", message);
-
-        //public async Task SendMessage(NotificationMessage message) => await Clients.Others.SendAsync("ReceiveMessage", message);
     }
-    //public class KassemHub : Hub
-    //{
-    //    //public async Task SendMessage(NotificationMessage message) => await Clients.All.SendAsync("ReceiveMessage", message);
-    //    //public async Task BroadcastMessage(NotificationMessage message) => await Clients.All.SendAsync("GetMessage", message);
-    //    //public async Task SendMessage(NotificationMessage message) => await Clients.Others.SendAsync("ReceiveMessage", message);
-    //}
 }
