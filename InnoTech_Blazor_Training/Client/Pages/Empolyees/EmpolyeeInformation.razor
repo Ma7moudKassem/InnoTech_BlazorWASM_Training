@@ -1,0 +1,11 @@
+﻿<button class="btn btn-info" @onclick="()=>model.Open()">Info</button>
+<ModelForm @ref="model">
+    <Title>Create New @typeof(Empolyee).Name details</Title>
+    <Body>
+        <EmpolyeeForm Empolyee="Empolyee" IsDisabled="true" OnValidSubmit="CloseForm" />
+    </Body>
+    <Footer>
+        <DialogTypeComponent Close="@model.Close" ShowSaveButton="false" ></DialogTypeComponent>
+    </Footer>
+</ModelForm>
+ 

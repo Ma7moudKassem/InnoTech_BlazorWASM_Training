@@ -1,0 +1,43 @@
+﻿@page "/empolyees"
+<PageTitle>Empolyee</PageTitle>
+<h1>Empolyees</h1>
+
+<div class="form-group">
+    <div class="w-75 input-group mb-3">
+        <input @bind-value="SearchTerm" @bind-value:event="oninput" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <button type="button" class="btn btn-secondary" @onclick="Clear">Clear</button>
+    </div>
+</div>
+
+<CreateEmpolyee />
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mobile</th>
+            <th>Telephone</th>
+            <th>Birth Date</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    @foreach( var empolyee in FilteredEmpolyees??new())
+    {
+     <tbody>
+        <tr>
+            <td>@empolyee.Name</td>
+            <td>@empolyee.Age</td>
+            <td>@empolyee.Mobile</td>
+            <td>@empolyee.Telephone</td>
+            <td>@empolyee.BirthDay</td>
+            <td>
+                <EditEmpolyee Empolyee = "@empolyee" />
+                    <button type="button" class="btn btn-danger" @onclick="@(()=> DeleteEmpolyee(empolyee.Id))">Delete</button>
+                <EmpolyeeInformation Empolyee="@empolyee" />
+
+            </td>
+        </tr>
+     </tbody>
+    
+    }
+</table>

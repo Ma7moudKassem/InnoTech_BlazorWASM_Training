@@ -7,4 +7,7 @@ global using Microsoft.AspNetCore.Components.Web;
 global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 global using InnoTech_Blazor_Training.Shared.Entities;
 global using Microsoft.AspNetCore.SignalR.Client;
+global using InnoTech_Blazor_Training.Client.Shared;
+
+
 

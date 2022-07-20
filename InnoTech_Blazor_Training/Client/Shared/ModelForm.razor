@@ -1,0 +1,48 @@
+﻿<div class="modal @modelClass" tabindex="-1" role="dialog"
+    style="display: @modelDisplay; overflow-y:auto; align-items: center ; justify-content:center;">
+
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Title</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" @onclick="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+              <div class="modal-body">
+                <p>@Body</p>
+              </div>
+              <div class="modal-footer">
+                @Footer
+              </div>
+        </div>
+    </div>
+</div>
+@if (showBackdrop)
+{
+    <div class="modal-backdrop fade show" data-dismiss="modal" @onclick="Close"></div>
+}
+@code {
+    [Parameter] public RenderFragment Title { get; set; }
+    [Parameter] public RenderFragment Body { get; set; }
+    [Parameter] public RenderFragment Footer { get; set; }
+
+    public bool PopupCollapsed { get; set; }
+
+    private string modelDisplay = "none";
+    private string modelClass   = "";
+    private bool showBackdrop  = false;
+
+    public void Open()
+    {
+        modelDisplay = "flex";
+        modelClass = "show";
+        showBackdrop = true;
+    }    
+    public void Close()
+    {
+        modelDisplay = "none";
+        modelClass = "";
+        showBackdrop = false;
+    }
+}

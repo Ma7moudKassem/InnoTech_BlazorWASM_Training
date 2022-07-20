@@ -1,0 +1,10 @@
+﻿<button class="btn btn-primary" @onclick="()=>model.Open()">New Empolyee</button>
+<ModelForm @ref="model">
+    <Title>Create New @typeof(Empolyee).Name</Title>
+    <Body>
+        <EmpolyeeForm Empolyee="empolyee" OnValidSubmit="Create" FormId="@formId" />
+    </Body>
+    <Footer>
+        <DialogTypeComponent Close="@model.Close" ShowSaveButton="true" FormId="@formId"></DialogTypeComponent>
+    </Footer>
+</ModelForm>
